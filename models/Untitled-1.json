@@ -1,0 +1,120 @@
+{
+    "fulfillmentMessages":[
+       {
+          "platform":"PLATFORM_UNSPECIFIED",
+          "payload":{
+             "fields":{
+                "quick_replies":{
+                   "structValue":{
+                      "fields":{
+                         "title":{
+                            "stringValue":"Please let me know how I can help by selecting an option from the list below:",
+                            "kind":"stringValue"
+                         },
+                         "items":{
+                            "listValue":{
+                               "values":[
+                                  {
+                                     "structValue":{
+                                        "fields":{
+                                           "title":{
+                                              "stringValue":"Help Checking Out",
+                                              "kind":"stringValue"
+                                           }
+                                        }
+                                     },
+                                     "kind":"structValue"
+                                  },
+                                  {
+                                     "structValue":{
+                                        "fields":{
+                                           "title":{
+                                              "stringValue":"Where is my Order",
+                                              "kind":"stringValue"
+                                           }
+                                        }
+                                     },
+                                     "kind":"structValue"
+                                  },
+                                  {
+                                     "structValue":{
+                                        "fields":{
+                                           "title":{
+                                              "stringValue":"Help with a return",
+                                              "kind":"stringValue"
+                                           }
+                                        }
+                                     },
+                                     "kind":"structValue"
+                                  },
+                                  {
+                                     "structValue":{
+                                        "fields":{
+                                           "title":{
+                                              "stringValue":"Problem with an Item",
+                                              "kind":"stringValue"
+                                           }
+                                        }
+                                     },
+                                     "kind":"structValue"
+                                  },
+                                  {
+                                     "structValue":{
+                                        "fields":{
+                                           "title":{
+                                              "stringValue":"Returns Charges",
+                                              "kind":"stringValue"
+                                           }
+                                        }
+                                     },
+                                     "kind":"structValue"
+                                  },
+                                  {
+                                     "structValue":{
+                                        "fields":{
+                                           "title":{
+                                              "stringValue":"Issue logging return",
+                                              "kind":"stringValue"
+                                           }
+                                        }
+                                     },
+                                     "kind":"structValue"
+                                  },
+                                  {
+                                     "structValue":{
+                                        "fields":{
+                                           "title":{
+                                              "stringValue":"Incorrect refund",
+                                              "kind":"stringValue"
+                                           }
+                                        }
+                                     },
+                                     "kind":"structValue"
+                                  },
+                                  {
+                                     "structValue":{
+                                        "fields":{
+                                           "title":{
+                                              "stringValue":"Something Else",
+                                              "kind":"stringValue"
+                                           }
+                                        }
+                                     },
+                                     "kind":"structValue"
+                                  }
+                               ]
+                            },
+                            "kind":"listValue"
+                         }
+                      }
+                   },
+                   "kind":"structValue"
+                }
+             }
+          },
+          "message":"payload"
+       }
+    ],
+    "fulfillmentText":"",
+    "intentName":"a0) Default Welcome Intent - Initial - custom"
+ }

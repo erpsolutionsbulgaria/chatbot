@@ -1,0 +1,37 @@
+curl -X GET https://www-bestoffers-com.myshopify.com/admin/api/2023-07/products/8392808923445.json -H 'Content-type: application/json' \
+-H 'X-Shopify-Access-Token: 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'
+
+
+curl -X GET https://www-bestoffers-com.myshopify.com/admin/api/2023-07/orders.json?status=any -H 'Content-type: application/json' \
+-H 'X-Shopify-Access-Token: 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'
+
+curl -X GET "https://www-bestoffers-com.myshopify.com/admin/api/2023-07/orders.json?status=any" \
+-H "X-Shopify-Access-Token: {access_token}"
+
+
+/admin/api/2023-07/orders/450789469.json?fields=id,line_items,name,total_price
+
+
+
+
+Get a Long-Lived Page Access Token
+
+curl -i -X GET "https://graph.facebook.com/{graph-api-version}/{app-scoped-user-id}/accounts?
+  access_token={long-lived-user-access-token}"
+
+
+Get a Long-Lived User Access Token
+
+curl -i -X GET "https://graph.facebook.com/{graph-api-version}/oauth/access_token?  
+    grant_type=fb_exchange_token&          
+    client_id={app-id}&
+    client_secret={app-secret}&
+    fb_exchange_token={your-access-token}" 
+
+
+curl -i -X GET https://graph.facebook.com/17.0/oauth/access_token?grant_type=fb_exchange_token&          
+client_id=229878903298320&
+client_secret=bceb39313e0ebd265f9235509a2e0c81&fb_exchange_token=EAADREtpfWRABOZCYZCFiPUBqUcVNjz0YmPZB27seyeLFxRQWjDln7ZBlJsrGSdakTVkfeo8I0EmcjfwDpeEng8o65n9agPfzhsej7AEsmeDiQAF3svkjSVNCsrJDpBnksMiiRREZBPoPj4fqUVCNqSJfu0AOCEfKl9EO0AGAVXDH7aqA0HRSupJ0pal1kz8M6pE7Dg3lNfSyBza0FW9FpzH3xPOJB35WAQZBYZD
+
+6683803118343279/accounts?
+  access_token=EAADREtpfWRABO8O4fZAUG1xCpEZB1xyUYBDm9xMMHCFzO3d1g2m77hKEd49y5bk0eVe3oPRIZC4tSukstjRgfVVkRbcJCKnrjuZCyjZCoeMaQrRefkXE6R0aVvJaQ8gqAVs8xFcFbf4jZBpEr2WqihMHCudfrZBW0ukC7xUHHWBbwIVDB5o6Mr1vBomF9l6ZCF4abRYnKhZC1
