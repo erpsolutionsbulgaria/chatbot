@@ -2,50 +2,19 @@
 import { eventsContextMap } from '../constants.js'
 
 import IContextObj from '../interfaces/IContextObj'
+import IMessageObj from '../interfaces/IMessageObj'
 
-export function findVal (object: any, key: string): any {
-  let value = 'NULL'
-  Object.keys(object).some(function (k) {
-    if (object[k] !== undefined && object[k] !== null && typeof object[k] === 'object' && !Array.isArray(object[k])) {
-      value = findVal(object[k], key)
-      return value !== 'NULL'
-    }
-    if (k === key) {
-      value = object[k]
-      return true
-    }
-    return false
-  })
-  return value
-}
+export const formatHistory = (historyData: IMessageObj[]): any => {
+  const result = []
+  const sortedHistory: IMessageObj[] = historyData.sort((a, b) => new Date(a.actionTs).getTime() - new Date(b.actionTs).getTime());
 
-export const extractEventFromContexts = (contextData: IContextObj[]): string => {
-  for (const elem of contextData) {
-    if (elem.lifespanCount !== undefined) {
-      const arr = elem.name.split('/')
-      const context = arr[arr.length - 1]
-      switch (context) {
-        case eventsContextMap.HWAR: return 'HWAR'
-        case eventsContextMap.HDIR: return 'HDIR'
-        case eventsContextMap.ILMR: return 'ILMR'
-        case eventsContextMap.MRII: return 'MRII'
-        case eventsContextMap.RC: return 'RC'
-        case eventsContextMap.WIMR: return 'WIMR'
-        case eventsContextMap.WISMO: return 'WISMO'
-      }
-    }
-  }
-  return ''
-}
-
-export function getEventFromContexts (contextsArray: IContextObj[]): string {
-  for (const obj of contextsArray) {
-    for (const context of Object.values(eventsContextMap)) {
-      if (obj.name.includes(context)) {
-        return context.toUpperCase()
-      }
-    }
+  for (const elem of sortedHistory) {
+    result.push({
+      role: elem.role,
+      content: elem.message
+    })
   }
 
-  return ''
+  console.log(' ===== ', result)
+  return result
 }

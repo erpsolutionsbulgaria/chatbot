@@ -8,11 +8,9 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 import axios from 'axios';
-// import { findVal } from '../helpers/helperFunctions.js'
 // import { detectIntent } from '../controllers/chatbot.js'
 // import IQuickReplyObj from '../interfaces/IQuickReplyObj'
 import { fulfillmentObj } from '../templates/response.js';
-import { getEventFromContexts } from '../helpers/helperFunctions.js';
 // function constructValues (response: any): IQuickReplyObj {
 //   console.log('WWWWWWWWWW ', response)
 //   const title = response.payload.fields.quick_replies.structValue.fields.title.stringValue
@@ -50,17 +48,6 @@ export class DialogflowModel {
         //       this.apiNumber = Number(streamIdDecoded.split(':')[1])
         //     }
         //   }
-        this.sendWelcome = () => __awaiter(this, void 0, void 0, function* () {
-            // const event = extractEventFromContexts(data.queryResult.outputContexts)
-            const event = getEventFromContexts(this.data.queryResult.outputContexts) + '_INITIAL';
-            const eventName = (event.length > 0) ? event : 'orderNotFound';
-            const eventData = {
-                name: eventName,
-                parameters: {},
-                languageCode: 'bg-BG'
-            };
-            return fulfillmentObj(eventData, []);
-        });
         this.retrieveOrderData = (orderNo, senderId) => __awaiter(this, void 0, void 0, function* () {
             // console.log('============== ', senderId)
             const res = yield axios.get('https://www-bestoffers-com.myshopify.com/admin/api/2023-07/orders.json', {

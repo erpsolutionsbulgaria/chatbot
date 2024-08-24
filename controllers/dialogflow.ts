@@ -8,9 +8,6 @@ import { BotModel } from '../models/bot.model.js'
 // import logger from '../utils/common.logger.js'
 import { intentConsts } from '../constants.js'
 import { fulfillmentObj } from '../templates/response.js'
-import {
-  getEventFromContexts
-} from '../helpers/helperFunctions.js'
 import IfulfillmentObj from '../interfaces/IFulfillmentObj'
 
 import dialogflow from '@google-cloud/dialogflow'
@@ -30,12 +27,12 @@ const processQuery = async (data: any): Promise<any> => {
   // console.log('==========  ', sessionId, intent, queryText)
 
   const obj = new DialogflowModel(data, sessionId)
-  switch (intent.displayName) {
-    case intentConsts.WELCOME_INITIAL:
-      result = await obj.sendWelcome(); break
-    case intentConsts.ORDER_LOOKUP_ORDER_NO_CONFIRM:
-      result = await obj.retrieveOrderData(queryText, sessionId); break
-  }
+  // switch (intent.displayName) {
+  //   case intentConsts.WELCOME_INITIAL:
+  //     result = await obj.sendWelcome(); break
+  //   case intentConsts.ORDER_LOOKUP_ORDER_NO_CONFIRM:
+  //     result = await obj.retrieveOrderData(queryText, sessionId); break
+  // }
 
   return result
 }

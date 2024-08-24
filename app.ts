@@ -7,6 +7,7 @@ import textQuery from './controllers/chatbot.js'
 import morgan from 'morgan'
 import bodyParser from 'body-parser'
 import cors from 'cors'
+import mongoose from 'mongoose'
 // import intentConsts from './constants'
 // import { fulfillmentObj } from './src/controllers/response.js'
 // import { sendError } from './src/helpers/errorHandler.js'
@@ -16,7 +17,10 @@ import cors from 'cors'
 // dotenv.config()
 
 const app = express()
+const uri = "mongodb+srv://kiril:100Kilatashaci@cluster0.twrrts7.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+// const clientOptions = { serverApi: { version: "1", strict: true, deprecationErrors: true } };
 
+mongoose.connect(uri);
 app.use(cors())
 app.set('view-engine', 'ejs')
 // app.use(express.urlencoded({ extended: false }))

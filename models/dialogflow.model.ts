@@ -1,14 +1,10 @@
 import axios from 'axios'
-// import { findVal } from '../helpers/helperFunctions.js'
 
 // import { detectIntent } from '../controllers/chatbot.js'
 
 // import IQuickReplyObj from '../interfaces/IQuickReplyObj'
 
 import { fulfillmentObj } from '../templates/response.js'
-import {
-  getEventFromContexts
-} from '../helpers/helperFunctions.js'
 
 // function constructValues (response: any): IQuickReplyObj {
 //   console.log('WWWWWWWWWW ', response)
@@ -59,19 +55,6 @@ export class DialogflowModel {
   //       this.apiNumber = Number(streamIdDecoded.split(':')[1])
   //     }
   //   }
-
-  sendWelcome = async (): Promise<any> => {
-    // const event = extractEventFromContexts(data.queryResult.outputContexts)
-    const event = getEventFromContexts(this.data.queryResult.outputContexts) + '_INITIAL'
-    const eventName = (event.length > 0) ? event : 'orderNotFound'
-    const eventData = {
-      name: eventName,
-      parameters: { },
-      languageCode: 'bg-BG'
-    }
-
-    return fulfillmentObj(eventData, [])
-  }
 
   retrieveOrderData = async (orderNo: any, senderId: any): Promise<any> => {
     // console.log('============== ', senderId)
